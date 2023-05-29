@@ -10,6 +10,6 @@ import Stream from './components/Stream.vue';
 #app{
   max-width: 1440px;
   margin: 0 auto;
-  padding: 50px 0px;
+  padding: 50px 15px;
 }
 </style>
