@@ -1,0 +1,214 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: inherit; 
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+
+
+.n-data-table.n-data-table--bordered .n-data-table-wrapper {
+  border: none;
+  border-bottom-left-radius: unset;
+  border-bottom-right-radius: unset;
+}
+
+.n-data-table .n-data-table-th {
+  padding: 0;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 0;
+  background-color: #fff;
+}
+.n-data-table .n-data-table-td {
+  padding: 0;
+}
+.n-data-table .n-data-table-tr {
+  background-color: #fff;
+}
+.n-checkbox-box-wrapper {
+  --n-size: 20px;
+}
+.n-checkbox.n-checkbox--checked .n-checkbox-box,
+.n-checkbox.n-checkbox--indeterminate .n-checkbox-box {
+  background-color: black;
+.n-checkbox.n-checkbox--checked .n-checkbox-box .n-checkbox-box__border,
+.n-checkbox.n-checkbox--indeterminate .n-checkbox-box .n-checkbox-box__border {
+  border: 1px solid black;
+}
+.n-checkbox .n-checkbox-box {
+  border-radius: 6px;
+}
+.n-checkbox .n-checkbox-box .n-checkbox-icon .check-icon,
+.n-checkbox .n-checkbox-box .n-checkbox-icon .line-icon {
+  fill: black;
+  width: 14px;
+}
+.n-checkbox:hover .n-checkbox-box .n-checkbox-box__border {
+  border-color: black;
+}
+.n-checkbox:focus .n-checkbox-box .n-checkbox-box__border {
+  border-color: black;
+}
+.n-checkbox {
+  --n-box-shadow-focus: 0 0 0 2px #4e5ba633 !important;
+  --n-border-checked: 1px solid #4e5ba6 !important;
+  --n-border-focus: 1px solid #4e5ba6 !important;
+}
+.n-data-table-th__title {
+  color: black;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+.n-data-table .n-data-table-tr:not(.n-data-table-tr--summary):hover {
+  background-color: black;
+}
+.n-data-table .n-data-table-td {
+  border-color: black;
+  color: black;
+}
+.n-data-table .n-data-table-td.n-data-table-td--last-row {
+  border-bottom: 1px solid black;
+}
+.n-data-table {
+  .success {
+      path {
+          stroke: black;
+      }
+      rect {
+          fill: black;
+      }
+  }
+}
+// custom progress component
+.n-progress.n-progress--line .n-progress-icon.n-progress-icon--as-text {
+  display: none;
+}
+.n-progress
+  .n-progress-graph
+  .n-progress-graph-line
+  .n-progress-graph-line-rail
+  .n-progress-graph-line-fill {
+  background: #4e5ba6;
+}
+.n-progress
+  .n-progress-graph
+  .n-progress-graph-line
+  .n-progress-graph-line-rail {
+  background: #f4f5f8;
+  border-radius: 6px;
+}
+.n-progress.n-progress--line {
+  width: 206px;
+}
+.n-checkbox.n-checkbox--disabled {
+  display: none;
+}
+}
+
+
+.n-base-selection {
+  --n-bezier: none
+  --n-border-radius: none !important;
+  --n-border: 1px solid #D0D5DD !important;
+  --n-height: 44px !important;
+  --n-border-focus: none !important;
+  --n-border-active: none !important;
+  --n-border-hover: none !important;
+  --n-box-shadow-active: none !important;
+  --n-box-shadow-focus: none !important;
+}
+
+.dashboard-skeleton {
+  .n-skeleton {
+      --n-color-start: #f4f4f4 !important;
+      --n-color-end: #f5f7fd !important;
+  }
+  &__header,
+  &__actions {
+      display: flex;
+      align-items: center;
+  }
+  &__header {
+      justify-content: space-between;
+      margin-bottom: 32px;
+  }
+  &__actions {
+      gap: 12px;
+  }
+  &__cards {
+      margin: 50px 0;
+  }
+  &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 23px;
+  }
+}

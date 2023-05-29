@@ -1,0 +1,43 @@
+.stream
+   margin: 0 auto
+   max-width: 460px
+   min-width: 320px
+   height: 100%
+   border-radius: 8px
+   border: 1px solid $border
+   padding: 8px
+   display: flex
+   flex-direction: column
+   background: $lightBlack
+   min-height: 753px
+   &__list
+      display: flex
+      color: white
+      font-size: 13px
+      font-family: Inter
+      font-weight: 300
+      justify-content: space-between
+      margin-bottom: 5px
+      &-upper
+         margin-bottom: 20px
+      &-item
+         max-width: 140px
+         min-width: 100px
+         display: flex
+         &:nth-child(2)
+            justify-content: center
+         &:nth-child(3)
+            justify-content: flex-end
+   &__sell, &__buy
+      height: 50%
+      overflow: hidden
+      min-height: 50%
+   &__sell
+      .stream__list-item
+         color: #f75252
+   &__buy
+      .stream__list-item
+         color: #2fe056
+            
+            
+      

@@ -1,0 +1,176 @@
+.n-data-table.n-data-table--bordered .n-data-table-wrapper {
+   border: none;
+   border-bottom-left-radius: unset;
+   border-bottom-right-radius: unset;
+ }
+ 
+ .n-data-table .n-data-table-th {
+   padding: 0;
+   padding-top: 13px;
+   padding-bottom: 13px;
+   padding-left: 0;
+   background-color: #fff;
+ }
+ .n-data-table .n-data-table-td {
+   padding: 0;
+ }
+ .n-data-table .n-data-table-tr {
+   background-color: #fff;
+ }
+ .n-checkbox-box-wrapper {
+   --n-size: 20px;
+ }
+ .n-checkbox.n-checkbox--checked .n-checkbox-box,
+ .n-checkbox.n-checkbox--indeterminate .n-checkbox-box {
+   background-color: black;
+ .n-checkbox.n-checkbox--checked .n-checkbox-box .n-checkbox-box__border,
+ .n-checkbox.n-checkbox--indeterminate .n-checkbox-box .n-checkbox-box__border {
+   border: 1px solid black;
+ }
+ .n-checkbox .n-checkbox-box {
+   border-radius: 6px;
+ }
+ .n-checkbox .n-checkbox-box .n-checkbox-icon .check-icon,
+ .n-checkbox .n-checkbox-box .n-checkbox-icon .line-icon {
+   fill: black;
+   width: 14px;
+ }
+ .n-checkbox:hover .n-checkbox-box .n-checkbox-box__border {
+   border-color: black;
+ }
+ .n-checkbox:focus .n-checkbox-box .n-checkbox-box__border {
+   border-color: black;
+ }
+ .n-checkbox {
+   --n-box-shadow-focus: 0 0 0 2px #4e5ba633 !important;
+   --n-border-checked: 1px solid #4e5ba6 !important;
+   --n-border-focus: 1px solid #4e5ba6 !important;
+ }
+ .n-data-table-th__title {
+   color: black;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 18px;
+ }
+ .n-data-table .n-data-table-tr:not(.n-data-table-tr--summary):hover {
+   background-color: black;
+ }
+ .n-data-table .n-data-table-td {
+   border-color: black;
+   color: black;
+ }
+ .n-data-table .n-data-table-td.n-data-table-td--last-row {
+   border-bottom: 1px solid black;
+ }
+ .n-data-table {
+   .success {
+       path {
+           stroke: black;
+       }
+       rect {
+           fill: black;
+       }
+   }
+ }
+
+
+
+ // custom progress component
+ .n-progress.n-progress--line .n-progress-icon.n-progress-icon--as-text {
+   display: none;
+ }
+ .n-progress
+   .n-progress-graph
+   .n-progress-graph-line
+   .n-progress-graph-line-rail
+   .n-progress-graph-line-fill {
+   background: #4e5ba6;
+ }
+ .n-progress
+   .n-progress-graph
+   .n-progress-graph-line
+   .n-progress-graph-line-rail {
+   background: #f4f5f8;
+   border-radius: 6px;
+ }
+ .n-progress.n-progress--line {
+   width: 206px;
+ }
+ .n-checkbox.n-checkbox--disabled {
+   display: none;
+ }
+ }
+ 
+
+ 
+ .n-base-selection {
+   --n-bezier: none
+   --n-border-radius: none ;
+   --n-border: 1px solid #D0D5DD ;
+   --n-height: 44px ;
+   --n-border-focus: none ;
+   --n-border-active: none ;
+   --n-border-hover: none ;
+   --n-box-shadow-active: none ;
+   --n-box-shadow-focus: none ;
+ }
+ 
+
+
+ .n-button  {
+  --n-bezier: none !important;
+  --n-ripple-color: none !important;
+  --n-text-color: none !important;
+  --n-text-color-hover: none !important;
+  --n-text-color-pressed: none !important;
+  --n-text-color-focus: none !important;
+  --n-text-color-disabled: none !important;
+  --n-border: 1px solid rgb(224, 224, 230) !important;
+  --n-border-hover: none !important;
+  --n-border-pressed: none !important;
+  --n-border-focus: none !important;
+  --n-border-disabled: none !important;
+  --n-bezier-ease-out: none !important;
+  --n-border: 0px !important;
+  padding: 0px ;
+}
+
+.n-button:not(.n-button--disabled):hover{
+  color: #1570EF
+}
+.n-dropdown-menu{
+padding: 0px !important;
+--n-border-radius: 5px !important
+}
+.n-dropdown-option-body__suffix, .n-dropdown-option-body__prefix{
+  display: none !important;
+}
+.n-dropdown-menu .n-dropdown-option .n-dropdown-option-body .n-dropdown-option-body__label, .n-dropdown-option-body{
+  height: max-content !important;
+}
+.n-dropdown-option-body::before{
+  display: none !important;
+}
+
+.Vue-Toastification__toast{
+  padding: 16px;
+  min-width: 360px;
+  min-height: 52px;
+  box-shadow: none;
+  border: 1px solid;
+  &--error{
+      color: #B42318;
+      background-color: #FFFBFA;
+      border-color: #B42318;
+  }
+  &--success{
+      color: #1570EF !important;
+      background-color: #ffffff !important;
+      border-color: #1570EF !important;
+  }
+  &--warning{
+      color: #B54708;
+      background-color: #FFFCF5;
+      border-color: #FEC84B;
+  }
+}
