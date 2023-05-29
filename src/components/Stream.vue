@@ -6,61 +6,32 @@
       <li class="stream__list-item">Время</li>
     </ul>
     <div class="stream__sell">
-      <ul class="stream__list" v-for="item in sell">
-        <li class="stream__list-item stream__list-item_price">
-          {{ item.p }} $
-        </li>
-        <li class="stream__list-item stream__list-item_quantity">
-          {{ item.q }}
-        </li>
-        <li class="stream__list-item">{{ getTimeFromDate(item.T) }}</li>
-      </ul>
+      <StreamList :data="sell"></StreamList>
     </div>
 
     <div class="stream__buy">
-      <ul class="stream__list" v-for="item in buy">
-        <li class="stream__list-item stream__list-item_price">
-          {{ item.p }} $
-        </li>
-        <li class="stream__list-item stream__list-item_quantity">
-          {{ item.q }}
-        </li>
-        <li class="stream__list-item">{{ getTimeFromDate(item.T) }}</li>
-      </ul>
+      <StreamList :data="buy"></StreamList>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import StreamList from "./StreamList.vue";
+import ICoin from "../models/coin";
 let socket = ref();
-let messages = ref<any>([]);
-let buy = ref<any>([]);
-let sell = ref<any>([]);
-let buyLasts = ref<any>([]);
-let sellLasts = ref<any>([]);
+let buy = ref<ICoin[]>([]);
+let sell = ref<ICoin[]>([]);
 
-let inputValue = ref<string>("");
-
-function getTimeFromDate(timestamp: any) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  let minutes = "0" + date.getMinutes();
-  let seconds = "0" + date.getSeconds();
-  let formattedTime =
-    hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
-  return formattedTime;
-}
-
-let startTradingTable = onMounted(() => {
+let startTradingTable = onMounted(():void => {
   socket.value = new WebSocket("wss://fstream.binance.com/ws/btcusdt@trade");
 
-  socket.value.onopen = (event: any) => {
+  socket.value.onopen = (): void => {
     console.log("Connected");
   };
-  socket.value.onmessage = (event: any) => {
-    const message = JSON.parse(event.data);
-    if (message.m === true) {
+  socket.value.onmessage = (event: MessageEvent) => {
+    const message: ICoin = JSON.parse(event.data);
+    if ((message.m as boolean) === true) {
       sell.value.push(message);
       if (sell.value.length > 20) {
         sell.value.shift();
@@ -69,7 +40,6 @@ let startTradingTable = onMounted(() => {
       buy.value.push(message);
       if (buy.value.length > 20) {
         buy.value.shift();
-        console.log(buy.value);
       }
     }
   };
@@ -80,17 +50,4 @@ let startTradingTable = onMounted(() => {
     console.log("ERROR");
   };
 });
-
-console.log(new Date(1685366137267).toLocaleString());
 </script>
-
-<style>
-.chat {
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-</style>
